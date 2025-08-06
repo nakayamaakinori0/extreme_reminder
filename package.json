@@ -1,0 +1,58 @@
+{
+  "name": "extreme-reminder",
+  "productName": "Extreme Reminder",
+  "version": "1.0.0",
+  "description": "シンプルで強力なMacネイティブリマインダーアプリケーション",
+  "main": ".vite/build/main.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "eslint --ext .ts,.tsx .",
+    "dev": "vite",
+    "build": "vite build && electron-builder",
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest --coverage",
+    "test:e2e": "playwright test"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Ak norinori",
+    "email": "42559915+nakayamaakinori0@users.noreply.github.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@electron-forge/cli": "^7.8.2",
+    "@electron-forge/maker-deb": "^7.8.2",
+    "@electron-forge/maker-rpm": "^7.8.2",
+    "@electron-forge/maker-squirrel": "^7.8.2",
+    "@electron-forge/maker-zip": "^7.8.2",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.8.2",
+    "@electron-forge/plugin-fuses": "^7.8.2",
+    "@electron-forge/plugin-vite": "^7.8.2",
+    "@electron/fuses": "^2.0.0",
+    "@testing-library/vue": "^8.1.0",
+    "@types/electron-squirrel-startup": "^1.0.2",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
+    "@vitest/coverage-v8": "^3.2.4",
+    "@vitest/ui": "^3.2.4",
+    "@vue/test-utils": "^2.4.6",
+    "electron": "37.2.5",
+    "eslint": "^8.57.1",
+    "eslint-plugin-import": "^2.32.0",
+    "happy-dom": "^18.0.1",
+    "playwright": "^1.54.2",
+    "typescript": "~4.5.4",
+    "vite": "^5.4.19",
+    "vitest": "^3.2.4"
+  },
+  "dependencies": {
+    "@vitejs/plugin-vue": "^4.6.2",
+    "electron-squirrel-startup": "^1.0.1",
+    "vue": "^3.5.18"
+  }
+}
