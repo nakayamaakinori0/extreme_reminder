@@ -1,7 +1,7 @@
 # 作業ログルール
 
 ## 概要
-このプロジェクトでは、開発作業を進める際に必ず`.logs`フォルダ内に作業ログをMarkdown形式で記録する。
+このプロジェクトでは、絶対に開発作業を進める際に必ず`.logs`フォルダ内に作業ログをMarkdown形式で記録する。
 
 ## ログファイル構成
 - 場所: `.logs/`ディレクトリ
@@ -61,4 +61,60 @@ Extreme Reminderプロジェクトの初期セットアップを実施
 - [x] プロジェクト作成
 - [ ] Vitest設定
 - [ ] TDDによる実装開始
+```
+
+## プロジェクト構造とアーキテクチャ
+
+### 技術スタック
+- **フレームワーク**: Electron + Vue 3 + TypeScript
+- **ビルドツール**: Vite
+- **テストフレームワーク**: Vitest + @vue/test-utils
+- **パッケージマネージャー**: npm
+
+### ディレクトリ構造
+```
+extreme-reminder/
+├── .logs/                      # 作業ログ
+│   ├── 2025-08-05_初期セットアップ.md
+│   └── 2025-08-05_ビルドとパッケージング.md
+├── src/
+│   ├── components/            # Vueコンポーネント
+│   │   ├── FullScreenNotification.vue
+│   │   └── TimerInput.vue
+│   ├── services/              # ビジネスロジック
+│   │   ├── Timer.ts
+│   │   └── __tests__/
+│   │       └── Timer.spec.ts
+│   ├── App.vue               # メインアプリケーションコンポーネント
+│   ├── main.ts               # Electronメインプロセス
+│   ├── preload.ts            # IPC通信ブリッジ
+│   └── renderer.ts           # Vueアプリケーションエントリーポイント
+├── out/                      # ビルド出力
+│   └── Extreme Reminder-darwin-arm64/
+└── package.json
+
+```
+
+### 主要機能
+1. **タイマー機能**: カウントダウンタイマーによるリマインダー設定
+2. **全画面通知**: 時間になったら全画面で通知を表示
+3. **macOSネイティブアプリ**: Apple Silicon (ARM64)対応
+
+### ビルド済み成果物
+- **アプリケーション**: `out/Extreme Reminder-darwin-arm64/Extreme Reminder.app`
+- **配布用ZIP**: `out/make/zip/darwin/arm64/Extreme Reminder-darwin-arm64-1.0.0.zip`
+
+### 開発コマンド
+```bash
+# 開発サーバー起動
+npm start
+
+# テスト実行
+npm test
+
+# ビルド
+npm run package
+
+# インストーラー作成
+npm run make
 ```
